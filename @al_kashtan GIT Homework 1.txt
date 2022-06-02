@@ -1,0 +1,529 @@
+30_QA_Group, [27.05.2022 11:49]
+[В ответ на 30_QA_Group]
+GIT Homework 1
+
+Для выполнения задания у вас должен быть установлен для Windows - GitBash.
+Создан аккаунт в GitHub
+
+Все шаги сценария выполняйте в терминале GitBush, Terminal, в папке под гитом.
+
+Как отправить ДЗ на проверку.
+ 1. Создайте текстоовый файл как в первом ДЗ по Terminal.
+ 2. Сценарий перенесите в этот файл.
+ 3. На против каждого действия - напишите команду в GitBash
+
+Файл со сценарием и ссылку на свой гит хаб отправляйте менторам на проверку.
+
+
+JSON
+ 4. Создать внешний репозиторий c названием JSON.
+https://github.com/AlexKashtan/JSON
+
+ 5. Клонировать репозиторий JSON на локальный компьютер.
+git clone https://github.com/AlexKashtan/JSON.git
+
+
+ 6. Внутри локального JSON создать файл “new.json”.
+cd JSON
+touch new.json
+
+ 7. Добавить файл под гит.
+git add new.json
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   new.json
+
+ 
+ 8. Закоммитить файл.
+git commit -m "file json format"
+[main e15d173] file json format
+1 file changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 new.json
+
+ 9. Отправить файл на внешний GitHub репозиторий.
+git pull
+Already up to date.
+
+
+ 10. Отредактировать содержание файла “new.json” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате JSON.
+cat >>new.json
+var object = {
+    key1 : {
+        name : 'ФИО',
+        value : 'Kastsialian Aliaksei Valer'evich'
+    },
+    key2 : {
+        name : 'Возраст',
+        value : '30'
+    },
+    key3 : {
+        name : 'количество домашних животных',
+        value : '1.0'
+    },
+    key4 : {
+        name : 'будущая желаемая зарплата',
+        value : '890$'
+    },
+}
+
+ 11. Отправить изменения на внешний репозиторий.
+git add .
+warning: LF will be replaced by CRLF in new.json.
+The file will have its original line endings in your working directory
+
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   new.json
+
+
+git commit -m "Added personal data in new.json"
+[main 99a7e5a] Added personal data in new.json
+ 1 file changed, 18 insertions(+)
+
+git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 507 bytes | 507.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/JSON.git
+   e15d173..99a7e5a  main -> main
+
+
+
+ 12. Создать файл preferences.json
+touch preferences.json
+
+ 13. В файл preferences.json добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
+cat >> preferences.json
+var object = {
+    key1 : {
+        name : 'Любимый фильм',
+        value : 'Red sparrow'
+    },
+    key2 : {
+        name : 'Любимый сериал',
+        value : 'Love Death + Robots'
+    },
+    key3 : {
+        name : 'Любимая еда',
+        value : 'Baked knuckle'
+    },
+    key4 : {
+        name : 'Любимое время года',
+        value : 'Winter'
+    },
+    key5 : {
+        name : 'Страна которую хотели бы посетить',
+        value : 'Portugal'
+    },
+}
+ 
+
+14. Создать файл sklls.json добавить информацию о скиллах которые будут изучены на курсе в формате JSON
+cat > skills.json
+
+1. Базовая теория (Что такое тестирование, багрепорты, документация, виды, методы, направления тестирования и т.п.) SDLC, STLC.  Done
+2. Что такое клиент-серверная архитектура. Done
+3. HTTP Методы запросов на сервер. Done
+4. Коды ответов HTTP сервера. Done
+5. Структуры HTTP запросов и ответов. Done
+6. Что такое JSON, XML. Их структура.
+7. Тестирование API через Postman (JS, автотесты API).
+8. Снятие и чтение логов c внешнего сервера. Done
+9. Снифинг http web трафика через Charles и Fiddler.
+10. Dev Tools веб браузеров (Google Chrome, FireFox).
+11. VPN. (Как работает, зачем нужен, как использовать, варианты инструментов) Done
+12. Мобильное тестирование.
+13. Особенность iOS, Android, гайдлайны.
+14. Сборка iOS приложений на XCode. (У кого нет Mac компьютера, просто посмотрят)
+15. Сборка Android приложений на Android Studio.
+16. ADB (управление андройд девайсами).
+17. Настройка прокси и vpn на iOS и Android. Done
+18. Перехват (сниффинг) мобильного трафика через Charles и Fiddler на iOS и Android.
+19. Командная строка (terminal) Linux (копирование, создание, просмотр, перемещение файлов на серверах без графического интерфейса) Done
+20. Основы bash скриптинг, автоматизация рутинных задач на сервере. Done
+21. Доступ к удалённым серверам. Done
+22. Основы SQL (Create, Delete, Drop, Insert Into, Select, From, Where, Join). Done
+23. База данных Postgres (установка, настройка и использование).
+24. Нереляционная база данных Redis (установка, настройка и использование).
+25. Нагрузочное тестирование в Jmeter.
+26. Методология разработки Scrum, Kanban. Done
+27. Python. (Изучение основ. Создание клиент серверного приложения)
+
+
+ 15. Отправить сразу 2 файла на внешний репозиторий.
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        preferences.json
+        skills.json
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+git add .
+warning: LF will be replaced by CRLF in preferences.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in skills.json.
+The file will have its original line endings in your working directory
+
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   preferences.json
+        new file:   skills.json
+
+
+git commit -m "created two json files"
+[main c716324] created two json files
+ 2 files changed, 51 insertions(+)
+ create mode 100644 preferences.json
+ create mode 100644 skills.json
+
+git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.71 KiB | 1.71 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/JSON.git
+   99a7e5a..c716324  main -> main
+
+
+ 16. На веб интерфейсе создать файл bug_report.json.
+создал на внешнем репозитории файл bug_report.json
+
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Добавил при создании Commit "Create bug_report.json"
+
+ 18. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON.
+Добавил пару строк.
+
+ 19. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+"Added new values"
+
+ 20. Синхронизировать внешний и локальный репозиторий JSON
+git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.90 KiB | 45.00 KiB/s, done.
+From https://github.com/AlexKashtan/JSON
+   c716324..d9ae98a  main       -> origin/main
+Updating c716324..d9ae98a
+Fast-forward
+ bug_report.json | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+ create mode 100644 bug_report.json
+
+
+ 21. Создать внешний репозиторий c названием XML.
+Создал внешний репозиторий https://github.com/AlexKashtan/XML
+
+ 22. Клонировать репозиторий XML на локальный компьютер.
+git clone https://github.com/AlexKashtan/XML.git
+Cloning into 'XML'...
+warning: You appear to have cloned an empty repository.
+
+ 23. Внутри локального XML создать файл “new.xml”.
+cd XML
+touch new.xml
+
+ 24. Добавить файл под гит.
+git add .
+
+ 25. Закоммитить файл.
+git commit -m "Created a new xml file"
+[main (root-commit) 6bff1bb] Created a new xml file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.xml
+
+ 26. Отправить файл на внешний GitHub репозиторий.
+git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 220 bytes | 220.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/XML.git
+ * [new branch]      main -> main
+
+ 27. Отредактировать содержание файла “new.xml” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате XML.
+<?xml version="1.0"?>
+<PERSON>
+  <NAME>Kashtsialian Aliaksei Valer'evich</NAME>
+  <AGE>30</AGE>
+  <AMOUNT>1</AMOUNT>
+  <SALARY>890</SALARY>
+</PERSON>
+
+ 28. Отправить изменения на внешний репозиторий.
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   new.xml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/Testing/GIT/group_29_free/home_work_2/JSON/XML (main)
+
+$ git add .
+$ git status
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   new.xml
+
+$ git commit -m "Added personal data"
+[main cbf7eee] Added personal data
+ 1 file changed, 7 insertions(+)
+
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 366 bytes | 366.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/XML.git
+   6bff1bb..cbf7eee  main -> main
+
+ 29. Создать файл preferences.xml
+
+ 30. В файл preferences.xml добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате XML.
+ 31. Создать файл sklls.xml добавить информацию о скиллах которые будут изучены на курсе в формате XML
+ 32. Сделать коммит в одну строку.
+ 33. Отправить сразу 2 файла на внешний репозиторий.
+ 34. На веб интерфейсе создать файл bug_report.xml.
+ 35. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ 36. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
+ 37. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+ 38. Синхронизировать внешний и локальный репозиторий XML
+
+30_QA_Group, [27.05.2022 11:50]
+[В ответ на 30_QA_Group]
+TXT
+ 1. Создать внешний репозиторий c названием TXT.
+Создал новый внешний репозиторий: 
+https://github.com/AlexKashtan/TXT
+
+ 2. Клонировать репозиторий TXT на локальный компьютер.
+git clone https://github.com/AlexKashtan/TXT.git
+Cloning into 'TXT'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+ 3. Внутри локального TXT создать файл “new.txt”.
+cd TXT
+touch new.txt
+ls -la
+total 5
+drwxr-xr-x 1 Алексей 197121  0 May 30 18:38 ./
+drwxr-xr-x 1 Алексей 197121  0 May 30 18:27 ../
+drwxr-xr-x 1 Алексей 197121  0 May 30 18:27 .git/
+-rw-r--r-- 1 Алексей 197121 27 May 30 18:27 README.md
+-rw-r--r-- 1 Алексей 197121  0 May 30 18:38 new.txt
+
+ 4. Добавить файл под гит.
+git add .
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   new.txt
+
+ 5. Закоммитить файл.
+git commit -m "New txt file"
+[main 92241af] New txt file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new.txt
+
+ 6. Отправить файл на внешний GitHub репозиторий.
+git pull
+Already up to date.
+
+ 7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT.
+cat > new.txt
+ФИО: Aliaksei Kashtsilian Valler'evich
+Возраст: 30
+Количество домашних животных: 1 cat
+Будущая желаемая зарплата: 890$
+
+Проверяю записалось ли:
+cat new.txt
+ФИО: Aliaksei Kashtsilian Valler'evich
+Возраст: 30
+Количество домашних животных: 1 cat
+Будущая желаемая зарплата: 890$
+
+
+ 8. Отправить изменения на внешний репозиторий.
+git add new.txt
+warning: LF will be replaced by CRLF in new.txt.
+The file will have its original line endings in your working directory
+
+git commit -m "Add information about me"
+[main 4717dd4] Add information about me
+ 1 file changed, 4 insertions(+)
+
+git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 690 bytes | 690.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/TXT.git
+   5d8f3fe..4717dd4  main -> main
+
+ 9. Создать файл preferences.txt
+touch preferences.txt
+
+ 10. В файл preferences.txt” добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT.
+cat > preferences.txt
+Любимый фильм: Red sporrow
+Любимый сериал: Vikings
+Любимая еда: BBQ
+Любимое время года: Winter
+Страну которую хотели бы посетить: Portugal
+
+Проверяю записалось ли:
+cat preferences.txt
+Любимый фильм: Red sporrow
+Любимый сериал: Vikings
+Любимая еда: BBQ
+Любимое время года: Winter
+Страну которую хотели бы посетить: Portugal
+
+
+ 11. Создать файл sklls.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT
+cat > skills.txt
+1. Базовая теория (Что такое тестирование, багрепорты, документация, виды, методы, направления тестирования и т.п.) SDLC, STLC.  Done
+2. Что такое клиент-серверная архитектура. Done
+3. HTTP Методы запросов на сервер. Done
+4. Коды ответов HTTP сервера. Done
+5. Структуры HTTP запросов и ответов. Done
+8. Снятие и чтение логов c внешнего сервера. Done
+11. VPN. (Как работает, зачем нужен, как использовать, варианты инструментов) Done
+16. ADB (управление андройд девайсами).
+17. Настройка прокси и vpn на iOS и Android. Done
+19. Командная строка (terminal) Linux (копирование, создание, просмотр, перемещение файлов на серверах без графического интерфейса) Done
+20. Основы bash скриптинг, автоматизация рутинных задач на сервере. Done
+21. Доступ к удалённым серверам. Done
+22. Основы SQL (Create, Delete, Drop, Insert Into, Select, From, Where, Join). Done
+26. Методология разработки Scrum, Kanban. Done
+
+Проверяю записалось ли:
+cat skills.txt
+1. Базовая теория (Что такое тестирование, багрепорты, документация, виды, методы, направления тестирования и т.п.) SDLC, STLC.  Done
+2. Что такое клиент-серверная архитектура. Done
+3. HTTP Методы запросов на сервер. Done
+4. Коды ответов HTTP сервера. Done
+5. Структуры HTTP запросов и ответов. Done
+8. Снятие и чтение логов c внешнего сервера. Done
+11. VPN. (Как работает, зачем нужен, как использовать, варианты инструментов) Done
+16. ADB (управление андройд девайсами).
+17. Настройка прокси и vpn на iOS и Android. Done
+19. Командная строка (terminal) Linux (копирование, создание, просмотр, перемещение файлов на серверах без графического интерфейса) Done
+20. Основы bash скриптинг, автоматизация рутинных задач на сервере. Done
+21. Доступ к удалённым серверам. Done
+22. Основы SQL (Create, Delete, Drop, Insert Into, Select, From, Where, Join). Done
+26. Методология разработки Scrum, Kanban. Done
+
+
+ 12. Сделать коммит в одну строку.
+git pull
+Already up to date.
+
+git commit -m "Create two txt files preferences.txt and skills.txt"
+[main 45bacf0] Create two txt files preferences.txt and skills.txt
+ 2 files changed, 19 insertions(+)
+ create mode 100644 preferences.txt
+ create mode 100644 skills.txt
+
+
+ 13. Отправить сразу 2 файла на внешний репозиторий.
+git add preferences.txt skills.txt
+
+git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.22 KiB | 1.22 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/TXT.git
+   4717dd4..45bacf0  main -> main
+
+
+ 14. На веб интерфейсе создать файл bug_report.txt.
+Создал файл:
+https://github.com/AlexKashtan/TXT/blob/main/bug_report.txt
+
+ 15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Добавил Commit "Create new file bug_report.txt"
+
+ 16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
+Добавил текст баг репорта в файл:
+Bug Name: Application crashes upon clicking the SAVE button while creating a new user.
+Bug ID: (It will be automatically created by the BUG Tracking tool once you save this bug).
+Area Path: USERS menu -> New Users
+Build Number: Version Number 5.0.1
+Severity: HIGH (High/Medium/Low) or 1
+Priority: HIGH (High/Medium/Low) or 1
+Assigned to: Developer-X
+Reported By: Your Name
+Reported On: Date
+Reason: Defect
+Status: New/Open/Active (Depends on the Tool you are using)
+Environment: Windows 2003/SQL Server 2005
+
+Description: Application crashes upon clicking the SAVE button while creating a new the user, hence unable to create a new user in the application.
+
+Steps to Reproduce:
+
+1) Login into the Application.
+2) Navigate to the Users Menu -> New User
+3) Filled out all the user information fields.
+4) Clicked on the вЂSaveвЂ™ button.
+5) Seen an error page вЂњORA1090 Exception: Insert values ErrorвЂ¦вЂќ
+6) See the attached logs for more information (Attach more logs related to the bug..IF any)
+7) Also see the attached screenshot of the error page.
+
+Expected Result: On clicking the SAVE button, you should be prompted to a successful message вЂњNew User has been created successfullyвЂќ.
+by Aliaksei Kashtsialian
+
+
+ 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Добавил Commit "Add text about bug"
+
+ 18. Синхронизировать внешний и локальный репозиторий TXT
+git clone https://github.com/AlexKashtan/TXT.git
+
