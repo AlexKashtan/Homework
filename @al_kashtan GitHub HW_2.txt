@@ -1,0 +1,232 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+Создал на внешнем новый репозиторий: 
+https://github.com/AlexKashtan/GIT_work
+Создал клон локально:
+git clone https://github.com/AlexKashtan/GIT_work.git
+Перехожу в данный репозиторий:
+cd GIT_work
+Создаю ветки:
+$ git branch Postman
+$ git branch Jmeter
+$ git branch CheckLists
+$ git branch BugReports
+$ git branch SQL
+$ git branch Charles
+$ git branch Mobile-testing
+Проверяю, создались ли:
+$ git branch
+  BugReports
+  Charles
+  CheckLists
+  Jmeter
+  Mobile-testing
+  Postman
+  SQL
+* main
+
+
+
+2. Запушить все ветки на внешний репозиторий
+git push -u --all
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/GIT_work.git
+ * [new branch]      Charles -> Charles
+ * [new branch]      CheckLists -> CheckLists
+ * [new branch]      Jmeter -> Jmeter
+ * [new branch]      Mobile-testing -> Mobile-testing
+ * [new branch]      Postman -> Postman
+branch 'BugReports' set up to track 'origin/BugReports'.
+branch 'SQL' set up to track 'origin/SQL'.
+branch 'main' set up to track 'origin/main'.
+branch 'Charles' set up to track 'origin/Charles'.
+branch 'CheckLists' set up to track 'origin/CheckLists'.
+branch 'Jmeter' set up to track 'origin/Jmeter'.
+branch 'Mobile-testing' set up to track 'origin/Mobile-testing'.
+branch 'Postman' set up to track 'origin/Postman'.
+
+
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+Перехожу в ветку BugReports:
+git checkout BugReports
+Switched to branch 'BugReports'
+Your branch is up to date with 'origin/BugReports'.
+
+Проверяю, перешел ли:
+ git branch
+* BugReports
+  Charles
+  CheckLists
+  Jmeter
+  Mobile-testing
+  Postman
+  SQL
+  main
+
+
+Создаю файл BugReports.txt и добавляю структуру бага:
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (BugReports)
+cat > BugReports.txt
+BugID:
+Title:
+Steps to Reproduce a Bug:
+Expected Result:
+Actual Result:
+Visual Proof of Bug:
+Bug Severity:
+Bug Priority:
+Attachments:
+
+Проверяю создание, путем чтения:
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (BugReports)
+$ cat BugReports.txt
+Title:
+Steps to Reproduce a Bug:
+Expected Result:
+Actual Result:
+Visual Proof of Bug:
+Bug Severity:
+Bug Priority:
+Attachments:
+
+
+
+4. Запушить структуру багрепорта на внешний репозиторий
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (BugReports)
+$ git add BugReports.txt
+
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (BugReports)
+$ git commit -m "New file BugReports.txt"
+[BugReports 8a1ff8c] New file BugReports.txt
+ 1 file changed, 8 insertions(+)
+ create mode 100644 BugReports.txt
+
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (BugReports)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 403 bytes | 403.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/GIT_work.git
+   64ad03a..8a1ff8c  BugReports -> BugReports
+
+
+5. Вмержить ветку Bag Reports в Main
+Переходим в ветку main:
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (BugReports)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Теперь делаю слияние:
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (main)
+$ git merge BugReports -m "Merge with BugReports"
+Updating 64ad03a..8a1ff8c
+Fast-forward (no commit created; -m option ignored)
+ BugReports.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 BugReports.txt
+
+
+
+6. Запушить main на внешний репозиторий.
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (main)
+$ git push
+Everything up-to-date
+
+
+
+7. В ветке CheckLists набросать структуру чек листа.
+Перехожу на ветку CheckLists
+$ git checkout CheckLists
+Switched to branch 'CheckLists'
+Your branch is up to date with 'origin/CheckLists'.
+
+Создаю файл CheckLists.txt
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (CheckLists)
+$ cat > CheckLists.txt
+ID
+Reguirement
+Status
+
+Проверяю его создание:
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (CheckLists)
+$ cat CheckLists.txt
+ID
+Reguirement
+Status
+
+
+8. Запушить структуру на внешний репозиторий
+
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (CheckLists)
+$ git add CheckLists.txt
+warning: LF will be replaced by CRLF in CheckLists.txt.
+The file will have its original line endings in your working directory
+
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (CheckLists)
+$ git commit -m "New file CheckLists.txt"
+[CheckLists d701c15] New file CheckLists.txt
+ 1 file changed, 3 insertions(+)
+ create mode 100644 CheckLists.txt
+
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (CheckLists)
+$ git push -u origin CheckLists
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 317 bytes | 317.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AlexKashtan/GIT_work.git
+   64ad03a..d701c15  CheckLists -> CheckLists
+branch 'CheckLists' set up to track 'origin/CheckLists'.
+
+
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+На внешнем репозитории перехожу в ветку "CheckLists".
+Кликаю "Pull requests".
+Нажимаю кнопку "Compare & pull request".
+Нажимаю кнопку "Create pull request".
+Вижу "This branch has no conflicts with the base branch", а значит кликаю кнопку "Merge pull request", затем "Confirm merge".
+Вижу "AlexKashtan wants to merge 1 commit into main from CheckLists", значит успешно, без конфликтов.
+
+
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+Перехожу на ветку main:
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (CheckLists)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Проверяю состояние:
+$ git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 747 bytes | 67.00 KiB/s, done.
+From https://github.com/AlexKashtan/GIT_work
+   8a1ff8c..dbebf7b  main       -> origin/main
+
+Делаю pull:
+Алексей@DESKTOP-J2CEUEP MINGW64 /c/Алексей/git-task/GIT_work (main)
+$ git pull
+Updating 8a1ff8c..dbebf7b
+Fast-forward
+ CheckLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 CheckLists.txt
+
